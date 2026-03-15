@@ -1,20 +1,61 @@
 import random
-words = [
-"python",
-"programa",
-"variable",
-"funcion",
-"bucle",
-"cadena",
-"entero",
-"lista",
-]
+categorias = {
+    "informatica":[
+        "python",
+        "programa",
+        "variable",
+        "funcion",
+        "bucle",
+        "entero",
+        "lista",
+    ],
+    "paises": [
+        "argentina",
+        "brasil",
+        "paraguay",
+        "uruguay",
+        "chile",
+
+    ],
+    "objetos":[
+        "silla",
+        "escritorio",
+        "pc",
+        "cadena",
+    ] 
+}
+
+words = ""
+
+category_selected = ""
+while category_selected == "":
+    print("seleccione alguna de las siguientes categorias: ")
+    i = 1
+    for cat in categorias:
+        print(i, "-", cat)
+        i += 1
+    category_selected = input("selecciona el numero de alguna de las categorias: ")
+
+    if not category_selected.isdigit():
+        print("debes ingresar un numero de alguna categoria existente")
+        category_selected = ""
+        continue
+    
+    category_selected = int(category_selected)
+
+    if category_selected < 1 or category_selected > len(categorias):
+        print("ese numero de categoria es inexistente, seleccione otro")
+        category_selected = ""
+
+claves = list(categorias)
+words = categorias[claves[category_selected - 1]]
 
 word = random.choice(words)
 guessed = []
 attempts = 6
 points = 0
 
+words = ""
 print("¡Bienvenido al Ahorcado!")
 print()
 
