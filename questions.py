@@ -25,8 +25,6 @@ categorias = {
     ] 
 }
 
-words = ""
-
 category_selected = ""
 while category_selected == "":
     print("seleccione alguna de las siguientes categorias: ")
@@ -91,8 +89,7 @@ while attempts > 0:
     else:
         guessed.append(letter)
         attempts -= 1
-        if points > 0:
-            points += -1
+        points += -1
         print("Esa letra no está en la palabra.")
     
     print()
