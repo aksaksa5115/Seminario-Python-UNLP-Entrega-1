@@ -61,7 +61,6 @@ while jugar:
     print()
     if index == len(words_random):
         print("completaste la categoria!!!")
-        print(f"palabras acertadas: {right_words} de {len(words_random)}")
         print("selecciona otra categoria para volver a jugar")
         break
     word = words_random[index]
@@ -119,5 +118,5 @@ while jugar:
                 choice = ""
             elif int(choice) == 2:
                 jugar = False
-
+print(f"palabras acertadas: {right_words} de {len(words_random)}")
 print("tu puntaje final fue de:", points)
